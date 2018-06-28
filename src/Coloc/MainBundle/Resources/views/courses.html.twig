@@ -1,0 +1,69 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Courses %}active{% endblock %}
+
+{% block body %}
+
+    <h1>A acheter</h1>
+
+    <div class="list-group">
+        {% for produit in  produits%}
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ produit.nom }}
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class= "btn btn-outline-primary btn-sm" href="/courses/{{ produit.id }}/switch">
+                            Panier
+                        </a>
+                        <a type="button" class= "btn btn-outline-danger btn-sm" href="/courses/{{ produit.id }}/delete">
+                            Supprimer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {{ form_start(form) }}
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_widget(form.nom) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-outline-success btn-sm'}}) }}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+    <br>
+    <h1>Panier</h1>
+
+    <div class="list-group">
+        {% for produit in  produits_panier%}
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ produit.nom }}
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class= "btn btn-outline-primary btn-sm" href="/courses/{{ produit.id }}/switch">
+                            Reposer
+                        </a>
+                        <a type="button" class= "btn btn-outline-danger btn-sm" href="/courses/{{ produit.id }}/delete">
+                            Supprimer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <a type="button" class="btn btn-outline-dark btn-lg {% block Balance %}{% endblock %}" href="{{ path('coloc_courses_done') }}">
+        Courses effectuées
+    </a>
+
+
+{% endblock %}

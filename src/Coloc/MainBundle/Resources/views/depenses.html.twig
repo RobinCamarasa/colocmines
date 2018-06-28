@@ -1,0 +1,41 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Depenses %}active{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <a type="button" class="btn btn-outline-dark btn-lg" href="{{ path('coloc_depenses_new') }}">
+            Nouvelle dépense
+        </a>
+    </div>
+
+        <br>
+
+        <div class="list-group">
+            {% for depense in depenses %}
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-3">
+                        {{ depense.nom }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ depense.montant|number_format(2, '.', ',') }}€
+                    </div>
+                    <div class="col-md-3">
+                        {{ depense.date|date('d/m') }}
+                    </div>
+                    <div class="col-md-3">
+                        <a type="button" class= "btn btn-outline-primary btn-sm" href="/depenses/{{ depense.id }}/modify">
+                            Modifier
+                        </a>
+                        <a type="button" class= "btn btn-outline-danger btn-sm" href="/depenses/{{ depense.id }}/delete">
+                            Supprimer
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}

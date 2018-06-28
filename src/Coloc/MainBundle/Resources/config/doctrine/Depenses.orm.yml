@@ -1,0 +1,41 @@
+Coloc\MainBundle\Entity\Depenses:
+    type: entity
+    table: null
+    repositoryClass: Coloc\MainBundle\Repository\DepensesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        montant:
+            type: float
+            column: montant
+        nbPartTotal:
+            type: float
+            column: nb_part_total
+        nbPartTotalColoc:
+            type: float
+            column: nb_part_total_coloc
+        nbPartRobin:
+            type: float
+            column: nb_part_robin
+        nbPartEva:
+            type: float
+            column: nb_part_eva
+        nbPartSylvain:
+            type: float
+            column: nb_part_sylvain
+        nbPartAutres:
+            type: float
+            column: nb_part_autres
+        paye_par:
+            type: integer
+            column: paye_par
+    lifecycleCallbacks: {  }

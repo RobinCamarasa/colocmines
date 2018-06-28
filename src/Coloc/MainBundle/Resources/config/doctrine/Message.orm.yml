@@ -1,0 +1,14 @@
+Coloc\MainBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: Coloc\MainBundle\Repository\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        contenu:
+            type: text
+    lifecycleCallbacks: {  }

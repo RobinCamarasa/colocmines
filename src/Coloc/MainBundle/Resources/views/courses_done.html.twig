@@ -1,0 +1,64 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Depenses %}active{% endblock %}
+
+{% block body %}
+
+    <div class="list-group">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Intitulé
+                </div>
+                <div class="col-md-4">
+                    <input>
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Payé par
+                </div>
+                <div class="col-md-4">
+                    <input>
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part Eva :
+                </div>
+                <div class="col-md-4">
+                    <input>
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part Robin :
+                </div>
+                <div class="col-md-4">
+                    <input>
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part Sylvain :
+                </div>
+                <div class="col-md-4">
+                    <input>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <a type="button" class="btn btn-outline-dark btn-lg" href="{{ path('coloc_courses') }}">
+        Enregistrer
+    </a>
+{% endblock %}

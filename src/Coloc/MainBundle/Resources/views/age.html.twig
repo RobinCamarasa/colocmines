@@ -1,0 +1,47 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Sylvain %}active{% endblock %}
+
+{% block body %}
+    <div class="list-group">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="/img/Sylvain_anniversaire.png" width="100%">
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2>
+                        Aujourd'hui Sylvain fête son {{ sylvain }}ième anniversaire
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="/img/Eva.png" width="100%">
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2>
+                        Pas de chance pour toi Eva, il te reste {{ eva }} jour(s) avant ton anniversaire !
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="/img/Robin.png" width="100%">
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2>
+                        Pas de chance pour toi Robin, il te reste {{ robin }} jour(s) avant ton anniversaire !
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

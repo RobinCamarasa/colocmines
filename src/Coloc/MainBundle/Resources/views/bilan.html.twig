@@ -1,0 +1,73 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Bilan %}active{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <a type="button" class="btn btn-outline-dark btn-lg {% block Balance %}{% endblock %}" href="{{ path('coloc_bilan_balance') }}">
+            Equilibre
+        </a>
+        <a type="button" class="btn btn-outline-dark btn-lg {% block Total %}{% endblock %}" href="{{ path('coloc_bilan_total') }}">
+            Total
+        </a>
+    </div>
+    <br>
+    <div class="list-group">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-xs-8 col-md-8">
+                    Eva
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    {% block display_Eva %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-xs-8 col-md-8">
+                    Robin
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    {% block display_Robin %}{% endblock %}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-xs-8 col-md-8">
+                    Sylvain
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    {% block display_Sylvain %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    {% if nul == 0 %}
+        {% for operation in operations %}
+            <div class="list-group">
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-3 col-md-3">
+                            {{ operation.2|number_format(2, '.', ',') }} €
+                        </div>
+                        <div class="col-xs-5 col-md-5">
+                            {{ operation.0 }} -> {{ operation.1 }}
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <a type="button" class= "btn btn-outline-primary btn-sm" href="/refund/{{ operation.0 }}/{{ operation.1 }}/{{ operation.2|number_format(2, '.', ',') }}">
+                                Remboursé
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}

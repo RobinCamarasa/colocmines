@@ -1,0 +1,71 @@
+coloc_main_homepage:
+    path:     /
+    defaults: { _controller: ColocMainBundle:Default:index }
+
+coloc_bilan_balance:
+    path:     /bilan/balance
+    defaults: { _controller: ColocMainBundle:Default:bilanBalance }
+
+coloc_bilan_total:
+    path:     /bilan/total
+    defaults: { _controller: ColocMainBundle:Default:bilanTotal }
+
+coloc_messages:
+    path:     /messages
+    defaults: { _controller: ColocMainBundle:Default:messages }
+
+coloc_messages_delete:
+    path:     /messages/{id}/delete
+    defaults: { _controller: ColocMainBundle:Default:messagesDelete }
+    requirements:
+                    id: \d*
+
+coloc_courses:
+    path:     /courses
+    defaults: { _controller: ColocMainBundle:Default:courses }
+
+coloc_courses_delete:
+    path:     /courses/{id}/delete
+    defaults: { _controller: ColocMainBundle:Default:coursesDelete }
+    requirements:
+                id: \d*
+
+coloc_courses_switch:
+    path:     /courses/{id}/switch
+    defaults: { _controller: ColocMainBundle:Default:coursesSwitch }
+    requirements:
+                id: \d*
+
+coloc_courses_done:
+    path:     /courses/done
+    defaults: { _controller: ColocMainBundle:Default:coursesDone }
+
+coloc_depenses:
+    path:     /depenses
+    defaults: { _controller: ColocMainBundle:Default:depenses }
+
+coloc_depenses_new:
+    path:     /depenses/new
+    defaults: { _controller: ColocMainBundle:Default:depensesNew }
+
+coloc_depenses_delete:
+    path:     /depenses/{id}/delete
+    defaults: { _controller: ColocMainBundle:Default:depensesDelete }
+    requirements:
+                id: \d*
+
+coloc_depenses_modify:
+    path:     /depenses/{id}/modify
+    defaults: { _controller: ColocMainBundle:Default:depensesModify }
+    requirements:
+                id: \d*
+
+coloc_age:
+    path:     /age
+    defaults: { _controller: ColocMainBundle:Default:age }
+
+coloc_refund:
+    path:     /refund/{paye_par}/{recu_par}/{montant}
+    defaults: { _controller: ColocMainBundle:Default:refund }
+    requirements:
+                id: \d*

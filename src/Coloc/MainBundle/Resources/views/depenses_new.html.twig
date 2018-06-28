@@ -1,0 +1,93 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Depenses %}active{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="list-group">
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Intitulé
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.nom) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Montant
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.montant) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Date
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.date) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Payé par
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.paye_par) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part Eva :
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.nbPartEva) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part Robin :
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.nbPartRobin) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part Sylvain :
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.nbPartSylvain) }}
+                </div>
+            </div>
+        </div>
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    Nb part autres :
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.nbPartAutres) }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    {{ form_widget(form.Enregistrer, {'attr': {'class': 'btn btn-outline-dark btn-lg'}}) }}
+    {{ form_end(form) }}
+{% endblock %}

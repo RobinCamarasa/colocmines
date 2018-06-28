@@ -1,0 +1,18 @@
+Coloc\MainBundle\Entity\Produit:
+    type: entity
+    table: null
+    repositoryClass: Coloc\MainBundle\Repository\ProduitRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+
+        panier:
+            type: integer
+    lifecycleCallbacks: {  }

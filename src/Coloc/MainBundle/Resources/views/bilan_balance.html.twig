@@ -1,0 +1,9 @@
+{% extends "ColocMainBundle::bilan.html.twig" %}
+
+{% block Balance %}active{% endblock %}
+
+{% block display_Eva %} {{ bilan.0|number_format(2, '.', ',') }} € {% endblock %}
+
+{% block display_Robin %} {{ bilan.1|number_format(2, '.', ',') }} € {% endblock %}
+
+{% block display_Sylvain %} {{ bilan.2|number_format(2, '.', ',') }} € {% endblock %}

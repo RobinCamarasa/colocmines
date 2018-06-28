@@ -1,0 +1,36 @@
+{% extends "ColocMainBundle::base.html.twig" %}
+
+{% block Messages %}active{% endblock %}
+
+{% block body %}
+    <div class="list-group">
+        {% for message in messages %}
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ message.contenu }}
+                    </div>
+                    <div class="col-md-4">
+                        <a type="button" class= "btn btn-outline-danger btn-sm" href="/messages/{{ message.id }}/delete">
+                            Supprimer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        {{ form_start(form) }}
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_widget(form.contenu) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-outline-success btn-sm'}}) }}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+imports:
+    - { resource: config.yml }
+
+#doctrine:
+#    orm:
+#        metadata_cache_driver: apc
+#        result_cache_driver: apc
+#        query_cache_driver: apc
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        url: "%env(CLEARDB_DATABASE_URL)%"
+
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            action_level: error
+            handler: nested
+        nested:
+            type: stream
+            path: '%kernel.logs_dir%/%kernel.environment%.log'
+            level: debug
+        console:
+            type: console
+            process_psr_3_messages: false
